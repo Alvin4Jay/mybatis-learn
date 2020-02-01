@@ -23,7 +23,7 @@ public class Main {
     private static void test01() throws IOException {
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder
-                .build(Resources.getResourceAsReader("mybatis-config.xml"), "development");
+                .build(Resources.getResourceAsReader("mybatis-config-dbcp.xml"), "development");
         // environment这个参数可以省略，因为 mybatis-config.xml 的<environments>标签指定了默认环境为development
 
         // 以上是样板代码

@@ -2,7 +2,7 @@ package com.jay;
 
 import com.jay.bean.User;
 import com.jay.mapper.UserMapper;
-import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * @author xuweijie
  */
-@Data
+@Slf4j
 public class Main {
 
     public static void main(String[] args) throws IOException {
