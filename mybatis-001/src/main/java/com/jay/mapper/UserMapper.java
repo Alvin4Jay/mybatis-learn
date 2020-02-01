@@ -1,7 +1,18 @@
-package com.jay.mybatis_001.mapper;
+package com.jay.mapper;
+
+import com.jay.bean.User;
 
 /**
  * @author xuweijie
  */
-public class UserMapper {
+public interface UserMapper {
+
+    /**
+     * 根据id查询用户信息
+     *
+     * @param id
+     * @return
+     */
+    User findById(Long id);
+
 }

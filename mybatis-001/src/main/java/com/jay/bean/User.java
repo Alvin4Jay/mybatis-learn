@@ -1,4 +1,4 @@
-package com.jay.mybatis_001.bean;
+package com.jay.bean;
 
 import lombok.Data;
 

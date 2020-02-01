@@ -1,6 +1,6 @@
-package com.jay.datasource.mapper;
+package com.jay.mapper;
 
-import com.jay.User;
+import com.jay.bean.User;
 
 /**
  * @author xuweijie
