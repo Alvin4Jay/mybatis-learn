@@ -9,7 +9,7 @@
         <module name="mybatis-002" />
         <module name="mybatis-001" />
         <module name="jdbc-demo" />
-        <module name="mybatis-learn" />
+        <module name="mybatis-003" />
       </profile>
     </annotationProcessing>
   </component>
