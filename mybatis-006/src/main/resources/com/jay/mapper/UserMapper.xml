@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.mapper.UserMapper">
+
+    <select id="findById" parameterType="java.lang.Long" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE id = #{id};
+    </select>
+
+    <select id="findByNameAndPasswordV1" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{param1} and password = #{param2}
+    </select>
+
+    <select id="findByNameAndPasswordV2" resultType="com.jay.bean.User">
+        <!--SELECT * FROM blog_db.user WHERE name = #{username} and password = #{password}-->
+        SELECT * FROM blog_db.user WHERE name = #{param1} and password = #{param2}
+    </select>
+
+    <select id="findByNameAndPasswordV3" parameterType="java.util.Map" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{username} and password = #{password}
+    </select>
+
+    <select id="findByNameAndPasswordV4" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{param1.username} and password = #{param2}
+    </select>
+
+    <select id="findByNameAndPasswordV5" resultType="com.jay.bean.User">
+        <!--SELECT * FROM blog_db.user WHERE name = #{data.username} and password = #{password}-->
+        SELECT * FROM blog_db.user WHERE name = #{param1.username} and password = #{param2}
+    </select>
+
+    <select id="findByNameAndPasswordV6" parameterType="com.jay.bean.User" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{name} and password = #{password}
+    </select>
+
+    <select id="findByNameAndPasswordV7" parameterType="com.jay.bean.User" resultType="com.jay.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{user.name} and password = #{user.password}
+    </select>
+
+</mapper>
