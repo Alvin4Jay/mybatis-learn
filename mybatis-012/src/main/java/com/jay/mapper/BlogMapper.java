@@ -9,4 +9,6 @@ public interface BlogMapper {
 
     Blog findById(Long id);
 
+    Blog findByIdTwo(Long id);
+
 }

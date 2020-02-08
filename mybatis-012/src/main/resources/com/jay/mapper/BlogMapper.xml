@@ -32,4 +32,40 @@
         FROM `blog` inner join `user` on `blog`.owner_id = `user`.id where `blog`.id = #{id}
     </select>
 
+
+    <!--////////////////////// 方式二 /////////////////////////-->
+    <resultMap id="blogQuery" type="com.jay.bean.Blog">
+        <id property="id" column="blog_id"/>
+        <result property="title" column="blog_title"/>
+        <result property="content" column="blog_content"/>
+        <result property="ownerId" column="user_id"/>
+
+        <association property="user" javaType="com.jay.bean.User" select="findOwnerOfBlog" column="user_id"/>
+    </resultMap>
+
+    <resultMap id="userQuery" type="com.jay.bean.User">
+        <id property="id" column="user_id"/>
+        <result property="name" column="user_name"/>
+        <result property="email" column="user_email"/>
+        <result property="password" column="user_password"/>
+    </resultMap>
+
+    <select id="findByIdTwo" parameterType="java.lang.Long" resultMap="blogQuery" resultType="com.jay.bean.Blog">
+        SELECT
+        id as blog_id,
+        title as blog_title,
+        content as blog_content,
+        owner_id as user_id
+        FROM blog WHERE id = #{id}
+    </select>
+
+    <select id="findOwnerOfBlog" parameterType="java.lang.Long" resultMap="userQuery" resultType="com.jay.bean.User">
+        SELECT
+        id as user_id,
+        name as user_name,
+        email as user_email,
+        password as user_password
+        FROM user WHERE id = #{user_id}
+    </select>
+
 </mapper>

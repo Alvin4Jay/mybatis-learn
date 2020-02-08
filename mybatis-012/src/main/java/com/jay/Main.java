@@ -22,7 +22,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // test01();
         // test02();
-        test03();
+        // test03();
+        test04();
+    }
+
+    private static void test04() throws IOException {
+        try (SqlSession sqlSession = getSqlSession()) {
+            BlogMapper userMapper = sqlSession.getMapper(BlogMapper.class);
+            Blog blog = userMapper.findByIdTwo(1L);
+            // log.info("{}", blog);
+            log.info("id:{}, title:{}, content:{}", blog.getId(), blog.getTitle(), blog.getContent());
+            log.info("user: {}", blog.getUser());
+        }
     }
 
     private static void test03() throws IOException {
