@@ -15,6 +15,7 @@
         <module name="mybatis-003" />
         <module name="mybatis-002" />
         <module name="mybatis-001" />
+        <module name="mybatis-014" />
         <module name="jdbc-demo" />
         <module name="mybatis-011" />
         <module name="mybatis-010" />
