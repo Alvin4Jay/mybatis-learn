@@ -33,13 +33,13 @@
     </select>
 
 
-    <!--////////////////////// 方式二 /////////////////////////-->
+    <!--////////////////////// 方式二 关联的嵌套 Select 查询 /////////////////////////-->
     <resultMap id="blogQuery" type="com.jay.bean.Blog">
         <id property="id" column="blog_id"/>
         <result property="title" column="blog_title"/>
         <result property="content" column="blog_content"/>
         <result property="ownerId" column="user_id"/>
-
+        <!--select指定嵌套查询的select语句-->
         <association property="user" javaType="com.jay.bean.User" select="findOwnerOfBlog" column="user_id"/>
     </resultMap>
 
