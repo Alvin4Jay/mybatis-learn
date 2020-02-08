@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jay.mapper.BlogMapper">
+
+    <resultMap id="blogResult" type="com.jay.bean.Blog">
+        <id property="id" column="blog_id"/>
+        <result property="content" column="blog_content"/>
+        <result property="title" column="blog_title"/>
+        <result property="ownerId" column="user_id"/>
+
+        <association property="user" javaType="com.jay.bean.User">
+            <id property="id" column="user_id"/>
+            <result property="name" column="user_name"/>
+            <result property="email" column="user_email"/>
+            <result property="password" column="user_password"/>
+        </association>
+    </resultMap>
+
+    <!-- 一对一 -->
+    <select id="findById" resultMap="blogResult" resultType="com.jay.bean.Blog">
+        SELECT
+        `blog`.id as blog_id,
+        `blog`.content as blog_content,
+        `blog`.title as blog_title,
+        `user`.id AS user_id,
+        `user`.name AS user_name,
+        `user`.email AS user_email,
+        `user`.password AS user_password
+        FROM `blog` inner join `user` on `blog`.owner_id = `user`.id where `blog`.id = #{id}
+    </select>
+
+</mapper>

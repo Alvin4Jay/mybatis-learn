@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.mapper.UserMapper">
+
+    <resultMap id="userResult" type="com.jay.bean.User">
+        <result property="id" column="user_id"/>
+        <result property="password" column="user_password"/>
+        <result property="name" column="user_name"/>
+        <result property="email" column="user_email"/>
+
+        <collection property="blogList" ofType="com.jay.bean.Blog">
+            <id property="id" column="blog_id"/>
+            <result property="title" column="blog_title"/>
+            <result property="content" column="blog_content"/>
+            <result property="ownerId" column="user_id"/>
+        </collection>
+    </resultMap>
+
+    <!-- 一对多 -->
+    <select id="findById" parameterType="java.lang.Long" resultMap="userResult" resultType="com.jay.bean.User">
+        SELECT
+            `user`.id as user_id,
+            `user`.password as user_password,
+            `user`.name as user_name,
+            `user`.email as user_email,
+            `blog`.id as blog_id,
+            `blog`.title as blog_title,
+            `blog`.content as blog_content,
+            `blog`.owner_id as user_id
+        FROM `user` inner join `blog` on `user`.id = `blog`.owner_id where `user`.id = #{id};
+    </select>
+
+    <select id="findByPassword" parameterType="java.lang.String" resultMap="userResult" resultType="com.jay.bean.User">
+<!--
+        SELECT
+        `user`.id as user_id,
+        `user`.password as user_password,
+        `user`.name as user_name,
+        `user`.email as user_email,
+        `blog`.id as blog_id,
+        `blog`.title as blog_title,
+        `blog`.content as blog_content,
+        `blog`.owner_id as user_id
+        FROM `user`, `blog` WHERE `user`.password = #{password} AND `user`.id = `blog`.owner_id;
+-->
+        SELECT
+        `user`.id as user_id,
+        `user`.password as user_password,
+        `user`.name as user_name,
+        `user`.email as user_email,
+        `blog`.id as blog_id,
+        `blog`.title as blog_title,
+        `blog`.content as blog_content,
+        `blog`.owner_id as user_id
+        FROM `user` inner join `blog` on `user`.id = `blog`.owner_id where `user`.password = #{password};
+    </select>
+
+
+</mapper>

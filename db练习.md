@@ -247,6 +247,127 @@ select product from orders group by product having sum(price)>100;
 
 ## 五、约束(index、key)
 
+```mysql
+定义主键约束（每一个表必须有一个主键列）
+create table student
+(
+	id int  primary key,
+	name varchar(40)
+);
+
+定义主键自动增长
+create table student
+(
+	id int  primary key auto_increment,
+	name varchar(40)
+);
+
+定义唯一约束
+drop table student;
+create table student
+(
+	id int primary key auto_increment,
+	name varchar(40) unique
+);
+
+定义非空约束
+drop table student;
+create table student
+(
+	id int primary key auto_increment,
+	name varchar(40) unique not null
+);
+
+定义外键约束
+create table husband
+(
+	id int primary key,
+	name varchar(40)
+);
+
+create table wife
+(
+	id int primary key,
+	name varchar(40),
+	husband_id int,
+	constraint husband_id_FK foreign key(husband_id) references husband(id)
+);
+```
+
+## 六、数据库表的设计
+
+```mysql
+一对多或多对一的对象存到数据库时，表的设计方案
+部门和员工
+create table department
+(
+	id int primary key,
+	name varchar(40)
+);
+
+create table employee
+(
+	id int primary key,
+	name varchar(40),
+	salary decimal(8,2),
+	department_id int,
+	constraint department_id_FK foreign key(department_id) references department(id)
+);
+
+
+多对多对象的表的设计（老师和学生）
+create table teacher
+(
+	id int primary key,
+	name varchar(40),
+	salary decimal(8,2)
+);
+
+create table student
+(
+	id int primary key,
+	name varchar(40)
+);
+
+create table teacher_student
+(
+	teacher_id int,
+	student_id int,
+	primary key(teacher_id,student_id),
+	constraint teacher_id_FK foreign key(teacher_id) references teacher(id),
+	constraint student_id_FK foreign key(student_id) references student(id)	
+);
+
+
+
+一对一的对象的数据库设计
+create table person
+(
+	id int primary key,
+	name varchar(40)
+);
+
+create table idcard
+(
+	id int primary key,
+	city varchar(40),
+	constraint id_FK foreign key(id) references person(id)	
+);
+```
+
+## 七、自关联对象的数据库设计
+
+```mysql
+自连接的表
+create table person
+(
+	id int primary key,
+	name varchar(40),
+	parent_id int,
+	constraint parent_id_FK foreign key(parent_id) references person(id)
+);
+```
+
 
 
 
