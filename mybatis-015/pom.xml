@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mybatis-016</artifactId>
+    <artifactId>mybatis-015</artifactId>
     <description>分页查询</description>
 
     <dependencies>

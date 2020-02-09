@@ -23,7 +23,7 @@
         <module>mybatis-011</module>
         <module>mybatis-012</module>
         <module>mybatis-014</module>
-        <module>mybatis-015</module>
+        <!--<module>mybatis-015</module>-->
         <module>mybatis-016</module>
     </modules>
 

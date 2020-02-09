@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com.jay/mapper/UserMapper.xml"/>
+        <mapper resource="com/jay/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>
