@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mybatis-017</artifactId>
+    <description>自动生成Mapper以及映射XML文件</description>
 
     <dependencies>
         <dependency>
