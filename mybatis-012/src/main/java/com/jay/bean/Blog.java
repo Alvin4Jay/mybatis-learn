@@ -11,7 +11,7 @@ public class Blog {
     private Long id;
     private String title;
     private String content;
-    private User user;
+    private User user; // 一对一
     private Long ownerId;
 
 }

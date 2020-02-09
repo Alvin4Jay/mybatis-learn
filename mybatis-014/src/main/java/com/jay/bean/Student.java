@@ -12,6 +12,6 @@ public class Student {
 
     private Long id;
     private String name;
-    private List<Teacher> teacherList;
+    private List<Teacher> teacherList; // 一对多
 
 }

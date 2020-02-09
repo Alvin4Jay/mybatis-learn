@@ -5,7 +5,7 @@
 <mapper namespace="com.jay.mapper.UserMapper">
 
     <resultMap id="userResult" type="com.jay.bean.User">
-        <result property="id" column="user_id"/>
+        <id property="id" column="user_id"/>
         <result property="password" column="user_password"/>
         <result property="name" column="user_name"/>
         <result property="email" column="user_email"/>
@@ -32,6 +32,7 @@
         FROM `user` inner join `blog` on `user`.id = `blog`.owner_id where `user`.id = #{id};
     </select>
 
+    <!-- 一对多 -->
     <select id="findByPassword" parameterType="java.lang.String" resultMap="userResult" resultType="com.jay.bean.User">
 <!--
         SELECT

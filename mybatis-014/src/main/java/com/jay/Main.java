@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 
 /**
+ * 多对多测试
+ *
  * @author xuweijie
  */
 @Slf4j

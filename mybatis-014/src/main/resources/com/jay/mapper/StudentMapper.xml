@@ -20,7 +20,7 @@
         student.name as student_name,
         teacher.id as teacher_id,
         teacher.name as teacher_name
-        FROM school.student
+        from school.student
         inner join school.relationship
         on student.id = relationship.student_id
         inner join school.teacher

@@ -14,6 +14,6 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private List<Blog> blogList;
+    private List<Blog> blogList; // 一对多
 
 }

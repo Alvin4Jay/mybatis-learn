@@ -29,7 +29,7 @@ public class Main {
     private static void test04() throws IOException {
         try (SqlSession sqlSession = getSqlSession()) {
             BlogMapper userMapper = sqlSession.getMapper(BlogMapper.class);
-            Blog blog = userMapper.findByIdTwo(1L);
+            Blog blog = userMapper.findByIdTwo(1L); // 一对一，延迟加载
             // log.info("{}", blog);
             log.info("id:{}, title:{}, content:{}", blog.getId(), blog.getTitle(), blog.getContent());
             log.info("user: {}", blog.getUser());
@@ -39,7 +39,7 @@ public class Main {
     private static void test03() throws IOException {
         try (SqlSession sqlSession = getSqlSession()) {
             BlogMapper userMapper = sqlSession.getMapper(BlogMapper.class);
-            Blog blog = userMapper.findById(1L);
+            Blog blog = userMapper.findById(1L); // 一对一
             log.info("{}", blog);
         }
     }
@@ -47,7 +47,7 @@ public class Main {
     private static void test02() throws IOException {
         try (SqlSession sqlSession = getSqlSession()) {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            List<User> users = userMapper.findByPassword("123");
+            List<User> users = userMapper.findByPassword("123"); // 一对多
             users.forEach(user -> {
                 log.info("{}", user);
             });
@@ -57,7 +57,7 @@ public class Main {
     private static void test01() throws IOException {
         try (SqlSession sqlSession = getSqlSession()) {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            User user = userMapper.findById(1L);
+            User user = userMapper.findById(1L); // 一对多
             log.info("{}", user);
         }
     }
