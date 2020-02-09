@@ -21,6 +21,12 @@
         <module name="mybatis-007" />
         <module name="mybatis-006" />
       </profile>
+      <profile name="Annotation profile for mybatis-learn" enabled="true">
+        <sourceOutputDir name="../mybatis-015/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mybatis-015/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mybatis-016" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatis-002 (1)" target="1.8" />
