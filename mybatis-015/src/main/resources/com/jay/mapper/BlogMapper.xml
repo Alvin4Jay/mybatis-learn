@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.mapper.BlogMapper">
+
+    <!--物理查询-->
+    <select id="findByUserId" resultType="com.jay.bean.Blog">
+        select
+        id, title, content, owner_id as ownerId
+        from blog
+        where owner_id = #{param1}
+        order by id asc
+        limit #{param2}, #{param3}
+    </select>
+
+    <!--逻辑查询(+PageHelper，物理查询，修改SQL)-->
+    <select id="findByUserIdWithRowBounds" resultType="com.jay.bean.Blog">
+        select
+        id, title, content, owner_id as ownerId
+        from blog
+        where owner_id = #{param1}
+        order by id asc
+    </select>
+
+</mapper>

@@ -6,19 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis-012" />
-        <module name="mybatis-009" />
-        <module name="mybatis-007" />
-        <module name="mybatis-006" />
         <module name="mybatis-005" />
         <module name="mybatis-004" />
         <module name="mybatis-003" />
         <module name="mybatis-002" />
         <module name="mybatis-001" />
+        <module name="mybatis-015" />
         <module name="mybatis-014" />
-        <module name="jdbc-demo" />
+        <module name="mybatis-012" />
         <module name="mybatis-011" />
         <module name="mybatis-010" />
+        <module name="jdbc-demo" />
+        <module name="mybatis-009" />
+        <module name="mybatis-007" />
+        <module name="mybatis-006" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

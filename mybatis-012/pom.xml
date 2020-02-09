@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mybatis-012</artifactId>
+    <description>一对多、一对一、延迟加载</description>
 
     <dependencies>
         <dependency>
