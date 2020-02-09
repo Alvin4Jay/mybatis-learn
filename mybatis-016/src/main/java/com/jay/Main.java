@@ -117,7 +117,7 @@ public class Main {
             user.setPassword("456");
 
             int result = userMapper.insertUser(user);
-            sqlSession.commit();
+            sqlSession.commit(); // 提交事务
             log.info("result: {}", result);
         }
     }
