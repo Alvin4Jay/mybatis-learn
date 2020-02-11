@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -23,6 +24,7 @@ public class Boot implements CommandLineRunner {
     }
 
     @Override
+    @Transactional // 事务管理测试
     public void run(String... strings) {
         // 使用SqlSession
         System.out.println(

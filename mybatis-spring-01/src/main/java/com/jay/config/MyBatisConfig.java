@@ -1,7 +1,6 @@
 package com.jay.config;
 
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
-import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -53,12 +52,12 @@ public class MyBatisConfig {
 
     /**
      * 线程安全的SqlSession实现
-     * @return
+     *
      * @throws Exception
      */
     @Bean
     public SqlSession sqlSession() throws Exception {
-        return new SqlSessionTemplate(sqlSessionFactory(), ExecutorType.BATCH);
+        return new SqlSessionTemplate(sqlSessionFactory());
     }
 
 }
