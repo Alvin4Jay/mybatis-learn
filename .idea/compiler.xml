@@ -17,6 +17,7 @@
         <module name="mybatis-012" />
         <module name="mybatis-011" />
         <module name="mybatis-010" />
+        <module name="mybatis-spring-boot-demo-01" />
         <module name="jdbc-demo" />
         <module name="mybatis-spring-01" />
         <module name="mybatis-001" />
@@ -29,5 +30,10 @@
       <module name="mybatis-002 (1)" target="1.8" />
       <module name="mybatis-spring-demo-01" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mybatis-spring-boot-demo-01" options="" />
+    </option>
   </component>
 </project>
