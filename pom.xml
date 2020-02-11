@@ -25,6 +25,7 @@
         <module>mybatis-014</module>
         <module>mybatis-016</module>
         <module>mybatis-017</module>
+        <module>mybatis-spring-01</module>
     </modules>
 
     <dependencies>

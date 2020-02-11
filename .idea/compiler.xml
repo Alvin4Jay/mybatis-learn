@@ -10,7 +10,7 @@
         <module name="mybatis-004" />
         <module name="mybatis-003" />
         <module name="mybatis-002" />
-        <module name="mybatis-001" />
+        <module name="mybatis-017" />
         <module name="mybatis-016" />
         <module name="mybatis-015" />
         <module name="mybatis-014" />
@@ -18,7 +18,8 @@
         <module name="mybatis-011" />
         <module name="mybatis-010" />
         <module name="jdbc-demo" />
-        <module name="mybatis-017" />
+        <module name="mybatis-spring-01" />
+        <module name="mybatis-001" />
         <module name="mybatis-009" />
         <module name="mybatis-007" />
         <module name="mybatis-006" />
@@ -26,6 +27,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatis-002 (1)" target="1.8" />
+      <module name="mybatis-spring-demo-01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
