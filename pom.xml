@@ -26,6 +26,7 @@
         <module>mybatis-016</module>
         <module>mybatis-017</module>
         <module>mybatis-spring-01</module>
+        <module>sharding-jdbc-demo</module>
     </modules>
 
     <dependencies>
