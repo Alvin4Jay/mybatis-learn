@@ -17,9 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * 数据源配置
@@ -53,9 +51,10 @@ public class DataSourceConfig {
         TableRuleConfiguration tableRuleConfiguration =
                 new TableRuleConfiguration("goods", "database${0..1}.goods_${0..1}");
 
-        // 分库分表规则
+        // 分库规则（Groovy表达式配置db规则）
         tableRuleConfiguration.setDatabaseShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("goods_id", "database${goods_id % 2}"));
+        // 分表规则（Groovy表达式配置表路由规则）
         tableRuleConfiguration.setTableShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("goods_type", "goods_${goods_type % 2}"));
 
