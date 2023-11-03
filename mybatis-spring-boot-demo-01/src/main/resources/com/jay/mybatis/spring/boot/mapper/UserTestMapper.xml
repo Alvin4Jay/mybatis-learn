@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.mybatis.spring.boot.mapper.UserTestMapper">
+
+    <select id="findByName" parameterType="java.lang.Long" resultType="com.jay.mybatis.spring.boot.bean.User">
+        SELECT * FROM blog_db.user WHERE name = #{name}
+        <if test="orderByIdDesc == true">
+            ORDER BY id DESC
+        </if>
+    </select>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        INSERT INTO blog_db.user(id, name)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id}, #{item.name})
+        </foreach>
+    </insert>
+
+</mapper>

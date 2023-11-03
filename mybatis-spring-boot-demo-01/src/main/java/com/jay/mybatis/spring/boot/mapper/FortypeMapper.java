@@ -1,6 +1,8 @@
 package com.jay.mybatis.spring.boot.mapper;
 
+import com.jay.mybatis.spring.boot.bean.Fortype;
 import com.jay.mybatis.spring.boot.bean.User;
+import com.jay.mybatis.spring.boot.interfaces.DtoToSqlInterface;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -8,14 +10,8 @@ import org.apache.ibatis.annotations.Param;
  * @author xuweijie
  */
 @Mapper
-public interface UserMapper {
+public interface FortypeMapper {
 
-    /**
-     * 根据id查询用户信息
-     *
-     * @param id
-     * @return
-     */
-    User findById(@Param("id") Long id);
+    int insert(@Param("item") Fortype fortype);
 
 }
